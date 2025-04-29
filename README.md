@@ -27,8 +27,11 @@
    ```bash
    git clone https://github.com/sachinbisen/Persona-AI.git
 2. Navigate into the project folder
+   ```bash
    cd Persona-AI
 3. Install dependencies
+   ```bash
    npm install
 4. Start the development server
+   ```bash
    npm start
