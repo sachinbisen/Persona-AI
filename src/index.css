@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Light Theme */
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --secondary: #10b981;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --bg: #f9fafb;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  /* Dark Theme */
+  --primary: #8b5cf6;
+  --primary-hover: #7c3aed;
+  --secondary: #10b981;
+  --text: #f8fafc;
+  --text-light: #94a3b8;
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --border: #334155;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px -2px rgba(124, 58, 237, 0.5);
+}
+
+/* Forms */
+.form-container {
+  max-width: 28rem;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Chat Messages */
+.message-user {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  align-self: flex-end;
+}
+
+.message-bot {
+  background-color: var(--card-bg);
+  color: var(--text);
+  border-radius: 18px 18px 18px 4px;
+  align-self: flex-start;
+  border: 1px solid var(--border);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Loading Spinner */
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+/* Small loader */
+.loader-small {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  /* Input focus styles */
+  .form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .form-container {
+      width: 100%;
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+    
+    .message-user, .message-bot {
+      max-width: 90%;
+    }
+  }
+  
+  /* Smooth transitions */
+  button, input, a {
+    transition: all 0.2s ease;
+  }
+  
+  /* Disabled button styles */
+  .btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+  /* Add these to your existing index.css */
+
+/* Enhanced Glass Card Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 16px;
+}
+
+/* Form Input Enhancements */
+.form-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: var(--text-light);
+  opacity: 0.6;
+}
+
+/* Alert Styles */
+.alert-error {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #ef4444;
+}
+
+.alert-success {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #10b981;
+}
+
+/* Persona Selection Enhancements */
+.persona-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.persona-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat Bubble Enhancements */
+.message-user {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  align-self: flex-end;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.message-bot {
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 18px 18px 18px 4px;
+  align-self: flex-start;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Gradient Background */
+.auth-bg {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
